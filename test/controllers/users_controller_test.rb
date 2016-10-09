@@ -11,8 +11,8 @@ class UsersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:users)
   end
 
-  test "should get new" do
-    get :new
+  test "should get new.html.erb" do
+    get :'new.html.erb'
     assert_response :success
   end
 

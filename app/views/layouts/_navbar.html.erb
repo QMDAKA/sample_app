@@ -16,7 +16,12 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">HOME</a></li>
         <li><a href="/static_pages/help">HELP</a></li>
-        <li><a href="/login">LOGIN</a></li>
+        <% if logged_in? %>
+            <li class="logout"><a href="/logout">LOG OUT</a></li>
+        <% else %>
+            <li><a href="/login">LOGIN</a></li>
+        <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

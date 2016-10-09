@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   end
 
-  # GET /users/new
+  # GET /users/new.html.erb
   def new
     @user = User.new
   end

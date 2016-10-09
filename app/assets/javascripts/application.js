@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require_self
+jQuery(document).ready(function($) {
+    $('.logout a').click(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/logout',
+            type: 'DELETE',
+            dataType: 'json',
+            data: { authenticity_token: $('meta[name="csrf-token"]').attr('content')}
+        })
+            .always(function() {
+                location.href ="/"
+            });
+    });
+});
